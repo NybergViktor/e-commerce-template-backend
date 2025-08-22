@@ -1,0 +1,8 @@
+app:
+  jwt:
+    secret: "test-secret-not-for-prod----fhjhgfkhdfjkhgjkhfdkg----123-123-123-"
+    expiration: 3600
+spring:
+  data:
+    mongodb:
+      database: e-commerce-template-test
