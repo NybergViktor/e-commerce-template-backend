@@ -1,7 +1,6 @@
 package com.e_commerce.template.product;
 
 import com.e_commerce.template.product.dto.ProductCreateRequest;
-import com.e_commerce.template.product.model.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,7 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<?> CreateProduct(@Valid @RequestBody ProductCreateRequest dto) {
         try {
-            return ResponseEntity.ok(productService.CreateProduct(dto));
+            return ResponseEntity.ok(productService.createProduct(dto));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }

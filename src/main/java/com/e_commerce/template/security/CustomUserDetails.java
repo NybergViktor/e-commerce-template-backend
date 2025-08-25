@@ -15,14 +15,12 @@ public class CustomUserDetails implements UserDetails {
     private final String id;
     private final String username;
     private final String password;
-    private final boolean enabled;
     private final Set<Role> roles;
 
     public CustomUserDetails(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
-        this.enabled = user.isEnabled();
         this.roles = user.getRoles();
     }
 
@@ -60,10 +58,5 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
     }
 }

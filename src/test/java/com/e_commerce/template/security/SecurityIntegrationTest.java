@@ -36,7 +36,6 @@ class SecurityIntegrationTest extends com.e_commerce.template.testsupport.MongoC
                         .username("admin")
                         .password(passwordEncoder.encode("admin123"))
                         .roles(Set.of(Role.ADMIN, Role.USER))
-                        .enabled(true)
                         .build())
         );
 
@@ -46,7 +45,6 @@ class SecurityIntegrationTest extends com.e_commerce.template.testsupport.MongoC
                         .username("alice")
                         .password(passwordEncoder.encode("password"))   // MUST be encoded
                         .roles(Set.of(Role.USER))
-                        .enabled(true)
                         .build())
         );
     }

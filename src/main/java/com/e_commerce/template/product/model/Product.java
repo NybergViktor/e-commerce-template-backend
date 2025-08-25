@@ -21,7 +21,7 @@ public class Product {
     private String title;
 
     private String description;
-    private int price;
+    private double price;
 
     private boolean enabled = true;
 }

@@ -1,5 +1,6 @@
 package com.e_commerce.template.user.model;
 
+import jakarta.validation.constraints.Email;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -16,14 +17,19 @@ import java.util.Set;
 public class User {
 
     @Id
-    private String id;               // <-- String (ObjectId som text)
+    private String id;
 
     @Indexed(unique = true)
     private String username;
 
     private String password;
 
-    private Set<Role> roles;
+    @Email
+    private String mail;
 
-    private boolean enabled = true;  // Lombok -> isEnabled()
+    private String firstName;
+
+    private String lastName;
+
+    private Set<Role> roles;
 }
